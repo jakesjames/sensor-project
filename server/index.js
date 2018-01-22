@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 //const sensor = require('node-dht-sensor');//
-const getSensorReadings = require(.'/get-cached-sensor-readings')
+const getSensorReadings = require('./get-cached-sensor-readings')
 
 /*
 we now utilize the synchronous methods exported from the 'get-cached-sensor-readings' module
