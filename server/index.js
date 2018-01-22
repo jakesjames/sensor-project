@@ -1,11 +1,23 @@
 const express = require('express');
-const app = express()
+const app = express();
+//const sensor = require('node-dht-sensor');//
+const getSensorReadings = require(.'/get-cached-sensor-readings')
 
-app.get('/temperature', function(req, res) {res.send('24 °C');
-});
+/*
+we now utilize the synchronous methods exported from the 'get-cached-sensor-readings' module
+*/
 
-app.get('/humidity', function(req, res) {res.send('48%');
-});
+app.get('/temperature', function (req, res) {
+	getSensorReadings((getCachedSensorReadings.getTemperature().toFixed(1) + '°C');
+	});
+);
 
-app.listen(3000, function() {console.log('Server listening on port 3000');
+app.get('/humidity', function (req, res) {
+	getSensorReadings((getCachedSensorReadings.getHumidity().toFixed(1) + '%');
+	});
+);
+
+
+app.listen(3000, function(){
+	console.log('Server listening on port 3000');
 });
