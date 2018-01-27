@@ -1,4 +1,4 @@
-const express = require('express');
+const = require('express');
 const app = express();
 //const sensor = require('node-dht-sensor');//
 const getCachedSensorReadings = require('./get-cached-sensor-readings')
@@ -13,6 +13,10 @@ app.get('/temperature', function (req, res) {
 
 app.get('/humidity', function (req, res) {
 	res.send(getCachedSensorReadings.getHumidity().toFixed(1) + '%');
+})
+
+app.get('/public, function () {
+	res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 app.listen(3000, function(){
