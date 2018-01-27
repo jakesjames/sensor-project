@@ -15,7 +15,7 @@ app.get('/humidity', function (req, res) {
 	res.send(getCachedSensorReadings.getHumidity().toFixed(1) + '%');
 })
 
-app.get('/public', function () {
+app.get('/public', function (req, res) {
 	res.sendFile(path.join(__dirname, 'index.html'))
 })
 
