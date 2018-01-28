@@ -3,6 +3,6 @@ fetch('/temperature')
 	return results.text()
 })
 .then(text => {
-	const temperatureDisplay = document.getElementByID('temperature-display')
+	const temperatureDisplay = document.getElementById('temperature-display');
 	temperatureDisplay.innerHTML = text
 })
