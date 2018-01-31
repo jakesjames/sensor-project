@@ -30,16 +30,16 @@ app.get('/public', function (req, res) {
 })
 */
 
-app.get('tempeature', function (req, res) {
-res.json({
-	value: getCachedSensorReadings.getTemperature().toFixed(1)
-})
+app.get('/tempeature', function (req, res) {
+	res.json({
+		value: getCachedSensorReadings.getTemperature().toFixed(1)
+	})
 })
 
-app.get('humidity', function (req, res) {
-res.json({
-	value: getCachedSensorReadings.getHumidity().toFixed(1)
-})
+app.get('/humidity', function (req, res) {
+	res.json({
+		value: getCachedSensorReadings.getHumidity().toFixed(1)
+	})
 })
 
 app.listen(3000, function(){
