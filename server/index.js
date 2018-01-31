@@ -31,11 +31,6 @@ app.get('/public', function (req, res) {
 */
 
 app.get('tempeature', function (req, res) {
-	/*
-	The express response object comes with a built in JSON method
-	this automatically converts its first argument into a JSON string
-	and sends it along with the content type headers as a response.
-	*/
 res.json({
 	value: getCachedSensorReadings.getTemperature().toFixed(1)
 })
