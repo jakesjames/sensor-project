@@ -30,7 +30,7 @@ app.get('/public', function (req, res) {
 })
 */
 
-app.get('/tempeature', function (req, res) {
+app.get('/temperature', function (req, res) {
 	res.json({
 		value: getCachedSensorReadings.getTemperature().toFixed(1)
 	})
