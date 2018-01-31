@@ -16,6 +16,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 we now utilize the synchronous methods exported from the 'get-cached-sensor-readings' module
 */
 
+/*
 app.get('/temperature', function (req, res) {
 	res.send(getCachedSensorReadings.getTemperature().toFixed(1));
 })
@@ -23,11 +24,28 @@ app.get('/temperature', function (req, res) {
 app.get('/humidity', function (req, res) {
 	res.send(getCachedSensorReadings.getHumidity().toFixed(1));
 })
-/*
+
 app.get('/public', function (req, res) {
 	res.sendFile(path.join(__dirname, 'index.html'))
 })
 */
+
+app.get('tempeature', function (req, res) {
+	/*
+	The express response object comes with a built in JSON method
+	this automatically converts its first argument into a JSON string
+	and sends it along with the content type headers as a response.
+	*/
+res.json({
+	value: getCachedSensorReadings.getTemperature().toFixed(1)
+})
+})
+
+app.get('humidity', function (req, res) {
+res.json({
+	value: getCachedSensorReadings.getHumidity().toFixed(1)
+})
+})
 
 app.listen(3000, function(){
 	console.log('Server listening on port 3000');
