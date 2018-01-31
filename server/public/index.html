@@ -3,7 +3,7 @@
 	<head>
 		<title>Sensor monitoring dashboard</title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, inital-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="style.css" rel="stylesheet">
 	</head>
 	
@@ -19,6 +19,14 @@
 			<p class = "title">Humidity</p>
 			<p class = "value" id = "humidity-display">Loading...</p>
 			<p class = "unit">%</p>
+		</div>
+	 </div>
+	 <div class "container">
+		<div>
+			<canvas id = "temperature-chart" width = "100%" height = "400px">
+		</div>
+		<div>
+			<canvas id="humidity-chart" width = "100%" height = "400px">
 		</div>
 	 </div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" ></script>
