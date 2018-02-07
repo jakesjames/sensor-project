@@ -1,12 +1,18 @@
 const getSensorReadings = require('./get-sensor-readings')
 
 /*
+Import the database module that we created earlier
+*/
+
+const databaseOperations = require('./database-operations')
+
+/*
 Instantiate the cache. In this case its a simple variable stored in the local memory.
 */
 
 const cache = {
-	temperature: null,
-	humidity: null
+	temperature: 0,
+	humidity: 0
 }
 
 /*
@@ -19,8 +25,11 @@ setInterval(() => {
 			return console.error(err)
 		}
 		/*
-		Set the values of the cache on receiving new readings
+		In addition to starting the readings in our cache, we also store them in our database
+		using the methods that we exported from our module
 		*/
+		databaseOperations.insertReading('temperature', temperature)
+		databaseOperations.insertReading('humidity', humidity)
 		cache.temperature = temperature
 		cache.humidity = humidity
 	})
