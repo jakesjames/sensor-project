@@ -6,7 +6,7 @@ const databaseOperations = require('./database-operations')
 
 app.get('temperature/range', function (req, res) {
 	const {start, end} = req.query
-	databaseOperations.fetchReadingsBetweenTime('temperature', start, end (err, results) => {
+	databaseOperations.fetchReadingsBetweenTime('temperature', start, end, (err, results) => {
 		if (err) {
 			console.error(err)
 			return res.status(500).end()
