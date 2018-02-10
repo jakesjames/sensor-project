@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path')
 const app = express();
 const getCachedSensorReadings = require('./get-cached-sensor-readings')
+const databaseOperations = require('./database-operations')
 
 app.get('/temperature/history', function (req, res){
 	databaseOperations.fetchLatestReadings('temperature', 10, (err, results) =>
