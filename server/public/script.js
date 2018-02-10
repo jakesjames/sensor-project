@@ -102,7 +102,7 @@ const fetchTemperatureHistory = () => {
 	*/
 	fetch('/temperature/history')
 		.then(results => {
-			return.results.json()
+			return results.json()
 		})
 		.then(data => {
 			data.forEach(reading => {
@@ -123,7 +123,7 @@ const fetchHumidityHistory = () => {
 	*/
 	fetch('/humidity/history')
 		.then(results => {
-			return.results.json()
+			return results.json()
 		})
 		.then(data => {
 			data.forEach(reading => {
