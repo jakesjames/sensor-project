@@ -18,7 +18,7 @@ const fetchReadingsBetweenTime = (type, start, end, callback) => {
 	db.all("SELECT * FROM temperature WHERE createdAt > ? AND createdAt <?;" , [start, end], callback)
 }
 
-const getAverageOfReadingBetweenTime = (type, start, end, callback) => {
+const getAverageOfReadingsBetweenTime = (type, start, end, callback) => {
 	db.get("SELECT avg(value) FROM temperature WHERE createdAt > ? AND createdAt < ?;", [start, end], callback)
 }
 
@@ -28,6 +28,6 @@ Export all the functions we just created as methods to the exported singleton
 module.exports = {
 	insertReading,
 	fetchLatestReadings,
-	fetchReadingBetweenTime,
+	fetchReadingsBetweenTime,
 	getAverageOfReadingsBetweenTime
 }
