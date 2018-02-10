@@ -106,9 +106,8 @@ const fetchTemperatureHistory = () => {
 		})
 		.then(data => {
 			data.forEach(reading => {
-				const time = new  Date(reading.createdAt + 'Z')
-				const formattedTime = 
-					time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
+				const time = new Date(reading.createdAt + 'Z')
+				const formattedTime = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
 				pushData(temperatureChartConfig.data.labels, formattedTime, 10)
 				pushData(temperatureChartConfig.data.datasets[0].data, reading.value, 10) 
 			})
@@ -126,9 +125,8 @@ const fetchHumidityHistory = () => {
 		})
 		.then(data => {
 			data.forEach(reading => {
-				const time = new  Date(reading.createdAt + 'Z')
-				const formattedTime = 
-				time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
+				const time = new Date(reading.createdAt + 'Z')
+				const formattedTime = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
 				pushData(humidityChartConfig.data.labels, formattedTime, 10)
 				pushData(humidityChartConfig.data.datasets[0].data, reading.value, 10) 
 			})
