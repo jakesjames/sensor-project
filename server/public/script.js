@@ -66,36 +66,6 @@ const pushData = (arr, value, maxLen) => {
 const humidityDisplay = document.getElementById('humidity-display')
 const temperatureDisplay = document.getElementById('temperature-display')
 
-const fetchTemperature = () => {
-	fetch('/temperature')
-	.then(results => {
-		return results.json()
-	})
-	.then(data => {
-		const now = new Date()
-		const timeNow = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()
-		pushData(temperatureChartConfig.data.labels, timeNow, 10)
-		pushData(temperatureChartConfig.data.datasets[0].data, data.value, 10)
-		temperatureChart.update()
-		temperatureDisplay.innerHTML = '<strong>' + data.value + '</strong>'
-	})
-}
-
-const fetchHumidity = () => {
-	fetch('/humidity')
-	.then(results => {
-		return results.json()
-	})
-	.then(data => {
-		const now = new Date()
-		const timeNow = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()
-		pushData(humidityChartConfig.data.labels, timeNow, 10)
-		pushData(humidityChartConfig.data.datasets[0].data, data.value, 10)
-		humidityChart.update()
-		humidityDisplay.innerHTML = '<strong>' + data.value + '</strong>'
-	})
-}
-
 const fetchTemperatureHistory = () => {
 	/**
 	*call the API we created
@@ -136,6 +106,39 @@ const fetchHumidityHistory = () => {
 			humidityChart.update()
 		})
 		fetchHumidityHistory()
+
+
+const fetchTemperature = () => {
+	fetch('/temperature')
+	.then(results => {
+		return results.json()
+	})
+	.then(data => {
+		const now = new Date()
+		const timeNow = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()
+		pushData(temperatureChartConfig.data.labels, timeNow, 10)
+		pushData(temperatureChartConfig.data.datasets[0].data, data.value, 10)
+		temperatureChart.update()
+		temperatureDisplay.innerHTML = '<strong>' + data.value + '</strong>'
+	})
+}
+
+const fetchHumidity = () => {
+	fetch('/humidity')
+	.then(results => {
+		return results.json()
+	})
+	.then(data => {
+		const now = new Date()
+		const timeNow = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()
+		pushData(humidityChartConfig.data.labels, timeNow, 10)
+		pushData(humidityChartConfig.data.datasets[0].data, data.value, 10)
+		humidityChart.update()
+		humidityDisplay.innerHTML = '<strong>' + data.value + '</strong>'
+	})
+}
+
+
 }
 
 
