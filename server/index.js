@@ -17,7 +17,7 @@ app.get('temperature/range', function (req, res) {
 
 app.get('temperature/average', function (req, res) {
 	const {start, end} = req.query
-	databaseOperations.getAverageOfReadingsBetweenTime('temperature', start, end (err, results) => {
+	databaseOperations.getAverageOfReadingsBetweenTime('temperature', start, end, (err, results) => {
 		if (err) {
 			console.error(err)
 			return res.status(500).end()
