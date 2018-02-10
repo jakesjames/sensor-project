@@ -129,8 +129,8 @@ const fetchHumidityHistory = () => {
 				const time = new  Date(reading.createdAt + 'Z')
 				const formattedTime = 
 				time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
-				pushData(temperatureChartConfig.data.labels, formattedTime, 10)
-				pushData(temperatureChartConfig.data.datasets[0].data, reading.value, 10) 
+				pushData(HumidityChartConfig.data.labels, formattedTime, 10)
+				pushData(HumidityChartConfig.data.datasets[0].data, reading.value, 10) 
 			})
 			humidityChart.update()
 		})
