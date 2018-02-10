@@ -199,5 +199,5 @@ if (!getParameterByName('start') && !getParameterByName('end')) {
 	fetchTemperatureRange()
 }
 
-}
+
 
