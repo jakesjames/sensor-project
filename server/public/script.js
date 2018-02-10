@@ -147,7 +147,7 @@ function getParameterByName (name) {
 const fetchTemperatureRange = () => {
 	const start = getParamterByName('start')
 	const end = getParameterByName('end')
-	fetch(`/temperature/range?start=${start}&end=${end]})`)
+	fetch(`/temperature/range?start=${start}&end=${end})`)
 		.then(results => {
 			return results.json()
 		})
@@ -168,7 +168,7 @@ const fetchTemperatureRange = () => {
 const fetchHumidityRange = () => {
 	const start = getParamterByName('start')
 	const end = getParameterByName('end')
-	fetch(`/humidity/range?start=${start}&end=${end]})`)
+	fetch(`/humidity/range?start=${start}&end=${end})`)
 		.then(results => {
 			return results.json()
 		})
