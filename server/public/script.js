@@ -161,6 +161,10 @@ const fetchTemperatureRange = () => {
 	
 	fetch(`temperature/average?start=${start}&end=${end}`)
 		.then(results => {
+			return results.json()
+		})
+		
+		.then(data => {
 			temperatureDisplay.innerHTML = '<strong>' + data.value + '</strong>'
 		})
 }
@@ -182,6 +186,9 @@ const fetchHumidityRange = () => {
 	
 	fetch(`humidity/average?start=${start}&end=${end}`)
 		.then(results => {
+			return results.json()
+		})
+		.then(data => {
 			humidityDisplay.innerHTML = '<strong>' + data.value + '</strong>'
 		})
 }
