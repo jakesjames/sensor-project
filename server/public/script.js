@@ -168,7 +168,7 @@ const fetchTemperatureRange = () => {
 		.then(data => {
 			temperatureDisplay.innerHTML = '<strong>' + data.value + '</strong>'
 		})
-}
+})
 
 const fetchHumidityRange = () => {
 	const start = getParameterByName('start')
@@ -193,7 +193,7 @@ const fetchHumidityRange = () => {
 		.then(data => {
 			humidityDisplay.innerHTML = '<strong>' + data.value + '</strong>'
 		})
-}
+})
 
 if (!getParameterByName('start') && !getParameterByName('end')) {
 	
