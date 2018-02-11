@@ -159,7 +159,7 @@ const fetchTemperatureRange = () => {
 			pushData(temperatureChartConfig.data.datasets[0].data, reading.value, 10)
 		})
 		temperatureChart.update()
-	
+		})
 	fetch(`temperature/average?start=${start}&end=${end}`)
 		.then(results => {
 			return results.json()
@@ -168,7 +168,7 @@ const fetchTemperatureRange = () => {
 		.then(data => {
 			temperatureDisplay.innerHTML = '<strong>' + data.value + '</strong>'
 		})
-})
+}
 
 const fetchHumidityRange = () => {
 	const start = getParameterByName('start')
@@ -185,7 +185,7 @@ const fetchHumidityRange = () => {
 				pushData(bhumidityChartConfig.data.datasets[0].data, reading.value, 10)
 		})
 		humidityChart.update()
-	
+		})
 	fetch(`humidity/average?start=${start}&end=${end}`)
 		.then(results => {
 			return results.json()
@@ -193,7 +193,7 @@ const fetchHumidityRange = () => {
 		.then(data => {
 			humidityDisplay.innerHTML = '<strong>' + data.value + '</strong>'
 		})
-})
+}
 
 if (!getParameterByName('start') && !getParameterByName('end')) {
 	
