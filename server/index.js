@@ -4,6 +4,21 @@ const app = express();
 const getCachedSensorReadings = require('./get-cached-sensor-readings')
 const databaseOperations = require('./database-operations')
 
+app.use('/public', express.static(path.join(__dirname, 'public')))
+
+
+app.get('/temperature', function (req, res) {
+	res.json({
+		value: getCachedSensorReadings.getTemperature().toFixed(1)
+	})
+})
+
+app.get('/humidity', function (req, res) {
+	res.json({
+		value: getCachedSensorReadings.getHumidity().toFixed(1)
+	})
+})
+
 app.get('temperature/range', function (req, res) {
 	const {start, end} = req.query
 	databaseOperations.fetchReadingsBetweenTime('temperature', start, end, (err, results) => {
@@ -56,20 +71,6 @@ app.get('/humidity/history', function (req, res){
 	})
 })
 
-app.use('/public', express.static(path.join(__dirname, 'public')))
-
-
-app.get('/temperature', function (req, res) {
-	res.json({
-		value: getCachedSensorReadings.getTemperature().toFixed(1)
-	})
-})
-
-app.get('/humidity', function (req, res) {
-	res.json({
-		value: getCachedSensorReadings.getHumidity().toFixed(1)
-	})
-})
 
 app.listen(3000, function(){
 	console.log('Server listening on port 3000');
