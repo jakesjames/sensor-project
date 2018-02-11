@@ -203,10 +203,9 @@ if (!getParameterByName('start') && !getParameterByName('end')) {
 	}, 2000)
 	fetchHumidityHistory()
 	fetchTemperatureHistory()
-} else {
+} 
+
+else {
 	fetchHumidityRange()
 	fetchTemperatureRange()
 }
-
-
-
