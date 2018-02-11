@@ -189,8 +189,8 @@ const fetchHumidityRange = () => {
 if (!getParameterByName('start') && !getParameterByName('end')) {
 	
 	setInterval(() => {
-	fetchTemperatureHistory()
-	fetchHumidityHistory()
+	fetchTemperature()
+	fetchHumidity()
 	}, 2000)
 	fetchHumidityHistory()
 	fetchTemperatureHistory()
