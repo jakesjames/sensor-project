@@ -190,7 +190,7 @@ if (!getParameterByName('start') && !getParameterByName('end')) {
 	
 	setInterval(() => {
 	fetchTemperature()
-	fetchHumiditygi()
+	fetchHumidity()
 	}, 2000)
 	fetchHumidityHistory()
 	fetchTemperatureHistory()
